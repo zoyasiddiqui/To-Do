@@ -10,6 +10,7 @@ document.getElementById("submit").onclick = function() {
     var li = document.createElement('li');
     var itemID = `item${counter}`;
     li.setAttribute("id", itemID);
+    li.classList.add("to-do-item")
     
     var closeButton = document.createElement("button");
     closeButton.classList.add("close");
@@ -21,7 +22,7 @@ document.getElementById("submit").onclick = function() {
 
     var text = document.createElement("p");
     text.innerText = toDoItem.value;
-    text.classList.add("to-do-item");
+    text.classList.add("to-do-text");
 
     li.append(text);
     li.append(closeButton);
