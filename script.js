@@ -1,15 +1,12 @@
 
 // get the value of the to do list item they typed out
 var emptyList = document.querySelector("ol");
-var counter = 1;
 
 document.getElementById("submit").onclick = function() {
 
     toDoItem = document.getElementById("item");
 
     var li = document.createElement('li');
-    var itemID = `item${counter}`;
-    li.setAttribute("id", itemID);
     li.classList.add("to-do-item")
     
     var closeButton = document.createElement("button");
@@ -21,17 +18,24 @@ document.getElementById("submit").onclick = function() {
     doneButton.innerText = "DONE";
 
     var text = document.createElement("p");
-    text.innerText = toDoItem.value;
     text.classList.add("to-do-text");
+    text.innerText = toDoItem.value;
 
     li.append(text);
     li.append(closeButton);
     li.append(doneButton);
 
     emptyList.append(li);
-    counter += 1;
     document.getElementById("item").value = "";
-}
 
+    //handling delete methods
 
-
+    closeButton.onclick = function() {
+        var item = closeButton.parentNode;
+        item.remove();
+    };
+    doneButton.onclick = function() {
+        var item = doneButton.parentNode;
+        item.style.textDecoration = "line-through";
+    }
+};
