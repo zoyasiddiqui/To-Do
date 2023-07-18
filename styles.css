@@ -31,4 +31,18 @@ h1 {
 
 .to-do-text {
     color: white;
+    font-size: 1.2em;
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.close {
+    padding: 3px 8px;
+    margin-left: 40px;
+}
+
+.done {
+    padding: 3px 8px;
+    margin-left: 15px;
 }
